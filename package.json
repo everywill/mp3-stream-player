@@ -1,0 +1,36 @@
+{
+  "name": "mp3-stream-player",
+  "version": "1.0.0",
+  "description": "Mp3 player suitable for streaming data on Web",
+  "main": "lib/index.js",
+  "files": ["lib/*"],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "esbuild src/index.js --format=esm --bundle --outdir=lib && cp node_modules/mp3-stream-decoder/lib/LameDecoder.wasm lib/LameDecoder.wasm",
+    "dev": "node demo/server/app.js & esbuild demo/src/index.js --bundle --watch --outdir=demo/server/public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/everywill/mp3-stream-player.git"
+  },
+  "keywords": [
+    "mp3-player",
+    "stream",
+    "browser"
+  ],
+  "author": "everywill",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/everywill/mp3-stream-player/issues"
+  },
+  "homepage": "https://github.com/everywill/mp3-stream-player#readme",
+  "dependencies": {
+    "mp3-stream-decoder": "^1.0.1",
+    "pcm-stream-player": "^1.0.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.15.12",
+    "express": "^4.18.2",
+    "ws": "^8.9.0"
+  }
+}
